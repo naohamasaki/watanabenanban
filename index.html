@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+	<meta name="Author" content=""/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+</head>
+<body>
+    <script>
+        var swiper;
+        $(window).load(function() {
+            swiper = new Swiper('.swiper-container', {
+                // この中にオプションを記述する。
+                speed: 800,
+                loop: true,
+                autoplay:2000,
+                grabCursor: true,
+                autoplayDisableOnInteraction: false,
+                slidesPerView: 2.5,
+                spaceBetween: 10,
+                centeredSlides : true,
+                pagination: '.swiper-pagination',
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                paginationClickable: true,
+                simulateTouch: true
+            });
+
+        });
+    </script>
+    <div style="padding: 100px 0 0 0; width: 960px; margin: 0 auto;">
+
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="https://www.e-tofuya.co.jp/we/wp-content/themes/e-tofuya/images/menu_01.jpg" alt="炭火焼">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.e-tofuya.co.jp/we/wp-content/themes/e-tofuya/images/menu_01.jpg" alt="炭火焼">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.e-tofuya.co.jp/we/wp-content/themes/e-tofuya/images/menu_01.jpg" alt="炭火焼">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.e-tofuya.co.jp/we/wp-content/themes/e-tofuya/images/menu_01.jpg" alt="炭火焼">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.e-tofuya.co.jp/we/wp-content/themes/e-tofuya/images/menu_01.jpg" alt="炭火焼">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.e-tofuya.co.jp/we/wp-content/themes/e-tofuya/images/menu_01.jpg" alt="炭火焼">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.e-tofuya.co.jp/we/wp-content/themes/e-tofuya/images/menu_01.jpg" alt="炭火焼">
+            </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    </div>
+    <!-- style -->
+
+
+
+</body>
+</html>
