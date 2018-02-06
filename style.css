@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/*
+Theme Name:name
+Description:title
+Theme URI: http://www.
+Version: 1.0
+License: name
+License URI: http://www.
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body {
+  font-family: 'Noto Sans Japanese', sans-serif;
+}
+
+/*----------
+    共通部分
+-----------*/
+a, img {
+  display: block;
+}
+
+img {
+  width: 100%;
+}
+
+.line_break {
+  padding-top: 1.375em;
+}
+
+header {
+  margin: 0 auto;
+  width: 960px;
+}
+header h1 {
+  width: 290px;
+  margin-top: 40px;
+}
+header a {
+  display: block;
+}
+
+.contact {
+  font-size: 16px;
+  font-family: "Source Han Sans JP";
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.header_bth_border {
+  height: 44px;
+  padding: 2px;
+  box-sizing: border-box;
+  border: 1px solid #ffc285;
+}
+
+.header_banner_bg {
+  background-image: -moz-linear-gradient(-29deg, #e6790d 0%, #f8820c 73%, #f89a3c 84%, #f7b16c 100%);
+  background-image: -webkit-linear-gradient(-29deg, #e6790d 0%, #f8820c 73%, #f89a3c 84%, #f7b16c 100%);
+  background-image: -ms-linear-gradient(-29deg, #e6790d 0%, #f8820c 73%, #f89a3c 84%, #f7b16c 100%);
+  width: 178px;
+  height: 48px;
+}

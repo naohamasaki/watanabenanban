@@ -1,0 +1,78 @@
+/*
+Theme Name:name
+Description:title
+Theme URI: http://www.
+Version: 1.0
+License: name
+License URI: http://www.
+*/
+
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body {
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+/*----------
+    共通部分
+-----------*/
+a,img {
+    display: block;
+}
+img {
+    width: 100%;
+}
+
+.line_break {
+    padding-top: 1.375em;
+}
+//sass
+$base-Font: 16px;
+$green: ;
+$orange: ;
+$red: ;
+$gray: #f9f9f9;
+
+//@include greenFont;として使用する
+@mixin greenFont {
+    font-size: ;
+    color: ;
+    
+}
+.menu_rank {
+    width: ;
+    
+}
+header {
+    margin: 0 auto;
+    width: 960px;
+    h1 {
+        width: 340px;
+        margin-top: 50px;
+    }
+    a {
+        display: block;
+    }
+}
+
+
+.contact {
+    font-size: 16px;
+    font-family: "Source Han Sans JP";
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 15px;
+}
+.header_bth_border {
+    height: 44px;
+    padding: 2px;
+    box-sizing: border-box;
+    border: 1px solid #ffc285;
+}
+.header_banner_bg {
+    background-image: -moz-linear-gradient( -29deg, rgb(230,121,13) 0%, rgb(248,130,12) 73%, rgb(248,154,60) 84%, rgb(247,177,108) 100%);
+    background-image: -webkit-linear-gradient( -29deg, rgb(230,121,13) 0%, rgb(248,130,12) 73%, rgb(248,154,60) 84%, rgb(247,177,108) 100%);
+    background-image: -ms-linear-gradient( -29deg, rgb(230,121,13) 0%, rgb(248,130,12) 73%, rgb(248,154,60) 84%, rgb(247,177,108) 100%);
+    width: 178px;
+    height: 48px;
+}
+
