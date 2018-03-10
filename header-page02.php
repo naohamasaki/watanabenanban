@@ -44,57 +44,19 @@
             <h1 id="logo">
                 <a href="<?php echo home_url('/'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.svg" alt="福岡 平尾山荘通りのチキン南蛮サンド店「ワタナベナンバン」" /></a>
             </h1>
-            <a href="<?php echo home_url('/'); ?>contact">
-                <div class="header_banner_bg">
-                    <div class="header_bth_border">
-                        <p class="contact">お問い合わせ</p>
-                    </div>
-                </div>
-            </a>
         </header>
         <!-- headerここまで -->
-        <!-- navi -->
-        <nav>
-            <?php wp_nav_menu(array('theme_location' => 'navi')); ?>
-        </nav> 
-        <!-- teaser -->
-        
-        <div id="teaser_bg">
-            <div>
-                <?php $get_url = get_page_link() ; ?>
-                <?php if ( strstr($get_url,'menu')||in_category('t_news')): ?>
-                <figure id="teaser">
-                    <img src="<?php bloginfo('template_url'); ?>/images/teaser_01.jpg" alt="メニュー">
-                </figure>
-                <figcaption><span>メニュー</span></figcaption>
-                <?php elseif ( strstr($get_url,'notice')||in_category('diary')) : ?>
-                <figure id="teaser">
-                    <img src="<?php bloginfo('template_url'); ?>/images/teaser_02.jpg" alt="お知らせ">
-                </figure>
-                <figcaption><span>お知らせ</span></figcaption>
-                <?php elseif ( strstr($get_url,'good')||in_category('aaaaaaa')) : ?>
-                <figure id="teaser">
-                    <img src="<?php bloginfo('template_url'); ?>/images/teaser_03.jpg" alt="こだわり">
-                </figure>
-                <figcaption><span>こだわり</span></figcaption>
-                <?php elseif ( strstr($get_url,'access')||in_category('aaaaaaa')) : ?>
-                <figure id="teaser">
-                    <img src="<?php bloginfo('template_url'); ?>/images/teaser_04.jpg" alt="アクセス">
-                </figure>
-                <figcaption><span>アクセス</span></figcaption>
-                <?php elseif ( strstr($get_url,'events')||in_category('event')) : ?>
-                <figure id="teaser">
-                    <img src="<?php bloginfo('template_url'); ?>/images/teaser_02.jpg" alt="イベント">
-                </figure>
-                <figcaption><span>イベント詳細</span></figcaption>
-                <?php else: ?>
-                <figure id="teaser">
-                    <img src="<?php bloginfo('template_url'); ?>/images/teaser_02.jpg" alt="ワタナベナンバン">
-                </figure>
-                <figcaption><span>ワタナベナンバン</span></figcaption>
-                <?php endif; ?>
-                <p>
-                    <?php the_topicpath(); ?>
-                </p>
-            </div>
-        </div>
+        <?php $get_url = get_page_link() ; ?>
+        <?php if ( strstr($get_url,'partner')): ?>
+        <figure id="partner_mv">
+            <img src="<?php bloginfo('template_url'); ?>/images/teaser_05.jpg" alt="パートナー募集">
+        </figure>
+        <figcaption><span>パートナー募集</span></figcaption>
+        <?php elseif ( strstr($get_url,'contact')) : ?>
+        <h2 class="contact_ttl"><span>お問い合わせ</span></h2>
+        <?php else: ?>
+        <figure id="teaser">
+            <img src="<?php bloginfo('template_url'); ?>/images/teaser_02.jpg" alt="ワタナベナンバン">
+        </figure>
+        <figcaption><span>ワタナベナンバン</span></figcaption>
+        <?php endif; ?>

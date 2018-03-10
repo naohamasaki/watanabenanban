@@ -15,26 +15,36 @@ License URI: http://www.
 }
 
 /* For modern browsers */
-.cf:before,
-.cf:after {
+.cf:before, .eventorganiser-event-meta:before,
+.cf:after,
+.eventorganiser-event-meta:after {
   content: "";
   display: table;
 }
 
-.cf:after {
+.cf:after, .eventorganiser-event-meta:after {
   clear: both;
 }
 
 /* For IE 6/7 (trigger hasLayout) */
-.cf {
+.cf, .eventorganiser-event-meta {
   zoom: 1;
+}
+
+.ctttl, main#menu_contents #etc_menu h3 span, main#menu_contents #tarutaru h4 span, .event_cal > h3 span {
+  color: #fa3638;
+  font-size: 25px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #fa3638;
+  text-align: center;
 }
 
 /*----------
     共通部分
 -----------*/
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a, img {
@@ -43,13 +53,16 @@ a, img {
 
 img {
   width: 100%;
+  height: 100%;
 }
 
 a {
   text-decoration: none;
+  color: #333;
 }
 
 a:link {
+  -webkit-transition: 0.26s;
   transition: 0.26s;
 }
 
@@ -76,6 +89,15 @@ body {
   margin: 0 auto;
 }
 
+.topicpath {
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 12px;
+  color: #aaa;
+}
+
 /*-------------------------------
     ヘッダーエリア
 -------------------------------*/
@@ -90,26 +112,25 @@ header h1 {
   width: 340px;
   margin-top: 10px;
 }
-header a {
+header h1 + a {
   display: block;
   width: 180px;
   float: right;
 }
-header a div.header_banner_bg {
-  background-image: -moz-linear-gradient(-29deg, #e6790d 0%, #f8820c 73%, #f89a3c 84%, #f7b16c 100%);
-  background-image: -webkit-linear-gradient(-29deg, #e6790d 0%, #f8820c 73%, #f89a3c 84%, #f7b16c 100%);
-  background-image: -ms-linear-gradient(-29deg, #e6790d 0%, #f8820c 73%, #f89a3c 84%, #f7b16c 100%);
+header h1 + a div.header_banner_bg {
+  background: linear-gradient(119deg, #ee861f 20%, #ec8219 36%, #e7790b 62%, #f5a95d 70%, #f7b16c 80%);
   width: 178px;
   height: 50px;
   padding: 2px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
 }
-header a div.header_banner_bg div.header_bth_border {
+header h1 + a div.header_banner_bg div.header_bth_border {
   height: 46px;
   padding: 2px;
   border: 1px solid #ffc285;
 }
-header a div.header_banner_bg div.header_bth_border p.contact {
+header h1 + a div.header_banner_bg div.header_bth_border p.contact {
   padding-left: 24px;
   font-size: 16px;
   font-family: "Source Han Sans JP";
@@ -127,25 +148,80 @@ nav {
   border-bottom: 1px solid #f1f1f1;
   margin-bottom: 40px;
 }
-nav ul {
+nav > div > ul {
   width: 960px;
   margin: 0 auto;
   padding: 25px 0 40px 0;
+  height: 90px;
   background: url(images/navi_bg.png) no-repeat center 57px;
 }
-nav ul li {
+nav > div > ul > li {
+  position: relative;
+  display: block;
   width: 160px;
-  box-sizing: border-box;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-align: center;
   float: left;
   border-right: 1px solid #f1f1f1;
 }
-nav ul li:last-child {
+nav > div > ul > li:last-child {
   border-right: none;
 }
-nav ul li span {
+nav > div > ul > li > a {
+  padding: 30px 0 40px 0;
+  margin-top: -30px;
+}
+nav > div > ul > li > a > span {
   font-size: 10px;
   margin-right: 5px;
+}
+nav > div > ul > li ul {
+  position: absolute;
+  top: 66px;
+  z-index: 2;
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  border-top: none;
+  display: none;
+  font-size: 14px;
+  width: 160px;
+}
+nav > div > ul > li ul li {
+  border-bottom: 1px dotted #f1f1f1;
+}
+nav > div > ul > li ul li:last-child {
+  border-bottom: none;
+}
+nav > div > ul > li ul li:hover {
+  background: #f9f9f9;
+}
+nav > div > ul > li ul li > a {
+  padding: 10px;
+}
+nav > div > ul > li ul li > a:hover {
+  opacity: 1;
+  color: #59b976;
+}
+nav > div > ul > li:hover > ul {
+  display: block;
+  font-size: 14px;
+  width: 160px;
+}
+nav > div > ul > li:hover > ul > li {
+  border-bottom: 1px dotted #f1f1f1;
+}
+nav > div > ul > li:hover > ul > li:last-child {
+  border-bottom: none;
+}
+nav > div > ul > li:hover > ul > li:hover {
+  background: #f9f9f9;
+}
+nav > div > ul > li:hover > ul > li > a:hover {
+  padding: 15px;
+  opacity: 1;
+  color: #59b976;
 }
 
 /*-------------------------------
@@ -172,16 +248,24 @@ nav ul li span {
 #trf #a #b {
   margin-top: -42px;
   padding-top: 104px;
-  transform: skew(0deg, -2.5deg);
+  -webkit-transform: skew(0deg, -2.5deg);
+          transform: skew(0deg, -2.5deg);
   background: #f9f9f9;
 }
 #trf #a #b #c {
-  transform: skew(0deg, 5deg);
+  -webkit-transform: skew(0deg, 5deg);
+          transform: skew(0deg, 5deg);
 }
 
 /*（パートナー募集、お問い合わせページ除く）下層共通*/
+.topicpath a {
+  display: inline;
+  text-decoration: underline;
+}
+
 #teaser_bg {
   height: 510px;
+  margin-bottom: 10px;
   background: url(images/body_bg_05.jpg) no-repeat center 40px;
 }
 #teaser_bg > div {
@@ -202,6 +286,7 @@ nav ul li span {
   font-weight: bold;
 }
 #teaser_bg > div figcaption span {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(67%, transparent), color-stop(10%, rgba(255, 255, 0, 0.32)));
   background: linear-gradient(transparent 67%, rgba(255, 255, 0, 0.32) 10%);
   line-height: 1.3em;
   margin-top: -5px;
@@ -214,11 +299,6 @@ nav ul li span {
 }
 #teaser_bg > div figcaption span::after {
   margin-left: 5px;
-}
-#teaser_bg > div p {
-  text-align: right;
-  font-size: 12px;
-  color: #aaa;
 }
 
 /*パートナー募集*/
@@ -268,7 +348,8 @@ main#top_contents_bg #top_sub_outer_r #top_sub_outer_l #top_contents_01 > div a 
   border: 2px solid #ff850b;
   width: 370px;
   text-decoration: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
 }
 main#top_contents_bg #top_sub_outer_r #top_sub_outer_l #top_contents_01 > div a:hover {
   opacity: .7;
@@ -295,12 +376,12 @@ main#top_contents_bg #topix_area {
   background: #CBEBD6;
   padding: 60px 0;
 }
-main#top_contents_bg #topix_area div.cf {
+main#top_contents_bg #topix_area div.cf, main#top_contents_bg #topix_area div.eventorganiser-event-meta {
   width: 960px;
   margin: 0 auto;
   margin-bottom: 40px;
 }
-main#top_contents_bg #topix_area div.cf h3 {
+main#top_contents_bg #topix_area div.cf h3, main#top_contents_bg #topix_area div.eventorganiser-event-meta h3 {
   width: 230px;
   float: left;
   font-family: "arial";
@@ -310,20 +391,20 @@ main#top_contents_bg #topix_area div.cf h3 {
   margin-right: 30px;
   letter-spacing: .08em;
 }
-main#top_contents_bg #topix_area div.cf h3 span {
+main#top_contents_bg #topix_area div.cf h3 span, main#top_contents_bg #topix_area div.eventorganiser-event-meta h3 span {
   color: #fa3638;
 }
-main#top_contents_bg #topix_area div.cf ul {
+main#top_contents_bg #topix_area div.cf ul, main#top_contents_bg #topix_area div.eventorganiser-event-meta ul {
   float: left;
 }
-main#top_contents_bg #topix_area div.cf li {
+main#top_contents_bg #topix_area div.cf li, main#top_contents_bg #topix_area div.eventorganiser-event-meta li {
   float: left;
   margin-right: 30px;
 }
-main#top_contents_bg #topix_area div.cf li:nth-child(2) {
+main#top_contents_bg #topix_area div.cf li:nth-child(2), main#top_contents_bg #topix_area div.eventorganiser-event-meta li:nth-child(2) {
   margin-right: 20px;
 }
-main#top_contents_bg #topix_area div.cf li a:hover {
+main#top_contents_bg #topix_area div.cf li a:hover, main#top_contents_bg #topix_area div.eventorganiser-event-meta li a:hover {
   opacity: .5;
 }
 main#top_contents_bg #topix_area #top_news {
@@ -412,9 +493,7 @@ main#top_contents_bg #top_menu ul li section h4 {
 }
 main#top_contents_bg #top_menu a {
   display: block;
-  background-image: -moz-linear-gradient(-48deg, #ef3a3e 0%, #d93337 40%, #e34a4e 77%, #ed6164 100%);
-  background-image: -webkit-linear-gradient(-48deg, #ef3a3e 0%, #d93337 40%, #e34a4e 77%, #ed6164 100%);
-  background-image: -ms-linear-gradient(-48deg, #ef3a3e 0%, #d93337 40%, #e34a4e 77%, #ed6164 100%);
+  background: linear-gradient(-48deg, #ef3a3e 0%, #d93337 40%, #e34a4e 77%, #ed6164 100%);
   position: absolute;
   left: 50%;
   bottom: 100px;
@@ -433,18 +512,83 @@ main#top_contents_bg #top_menu a p {
   text-align: center;
 }
 
-main#menu_contents .column_width > h2 {
+/*下層ページタイトル*/
+#page_title {
   background: url(images/pagetitle_bg.jpg) no-repeat bottom left;
   font-size: 25px;
   color: #fa3638;
   padding-bottom: 35px;
   margin-bottom: 55px;
 }
-main#menu_contents .column_width > h2 span {
+#page_title span {
   display: block;
   border-bottom: 2px solid rgba(248, 52, 56, 0.3);
   padding-bottom: 12px;
 }
+
+#two_banner {
+  background: #f9f9f9;
+  padding: 70px 0;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+#two_banner ul {
+  width: 1280px;
+  margin: 0 auto;
+}
+#two_banner ul li {
+  position: relative;
+  float: left;
+  width: 620px;
+  height: 380px;
+  overflow: hidden;
+  padding: 6px;
+}
+#two_banner ul li::after {
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+#two_banner ul li:hover:after {
+  opacity: .9;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+#two_banner ul li:last-child {
+  float: right;
+}
+#two_banner ul li a {
+  position: relative;
+  z-index: 2;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  padding: 30px;
+  height: 100%;
+}
+#two_banner ul li a > div {
+  background: rgba(0, 0, 0, 0.55);
+  height: 100%;
+  padding: 25px;
+}
+#two_banner ul li a > div h6 {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+#two_banner ul li a > div h6::before {
+  content: "-";
+  margin-right: 10px;
+}
+#two_banner ul li a > div p {
+  color: #fff;
+}
+
+/*メニュー*/
 main#menu_contents .column_width > h2 + Ul li {
   margin-bottom: 100px;
 }
@@ -529,12 +673,8 @@ main#menu_contents #all_sand > div dl dt {
   border-bottom: 2px solid #59b976;
   margin-bottom: 30px;
 }
-main#menu_contents .ctttl, main#menu_contents #etc_menu h3 span {
-  color: #fa3638;
-  font-size: 25px;
-  padding-bottom: 14px;
-  border-bottom: 2px solid #fa3638;
-  text-align: center;
+main#menu_contents #etc_menu {
+  margin-bottom: 100px;
 }
 main#menu_contents #etc_menu h3 {
   width: 600px;
@@ -572,21 +712,592 @@ main#menu_contents #etc_menu ul li:nth-child(2n) dl {
   float: left;
   padding: 45px 60px 0 0;
 }
+main#menu_contents #takeout {
+  background: #f9f9f9;
+  margin-bottom: 70px;
+  overflow: hidden;
+}
+main#menu_contents #takeout > div {
+  min-width: 960px;
+  height: 490px;
+  padding-top: 60px;
+  background: url(images/bg_0203.jpg) no-repeat right top;
+}
+main#menu_contents #takeout > div > section {
+  width: 960px;
+  margin: 0 auto;
+  padding: 30px 0 0 20px;
+}
+main#menu_contents #takeout > div > section h5 {
+  padding: 30px 0 0 14px;
+  background: url(images/Pick.png) no-repeat top left;
+  color: #ff850b;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+main#menu_contents #takeout > div > section a {
+  text-decoration: underline;
+}
+main#menu_contents #tarutaru {
+  background: url(images/tarutaru_bg.jpg) no-repeat center 95px;
+  margin-bottom: 100px;
+}
+main#menu_contents #tarutaru h4 {
+  text-align: center;
+  height: 60px;
+  margin-bottom: 80px;
+}
+main#menu_contents #tarutaru ul {
+  width: 960px;
+  margin: 0 auto;
+}
+main#menu_contents #tarutaru ul li {
+  float: left;
+  height: 260px;
+  width: 290px;
+  padding: 30px 25px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+  background: rgba(255, 255, 255, 0.8);
+  margin: 0 45px 45px 0;
+}
+main#menu_contents #tarutaru ul li:nth-child(3n) {
+  margin-right: 0;
+}
+main#menu_contents #tarutaru ul li:nth-child(3n+1) {
+  clear: both;
+}
+main#menu_contents #tarutaru ul li:last-child {
+  margin-bottom: 0;
+}
+main#menu_contents #tarutaru ul li h5 {
+  color: #59b976;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #59b976;
+  margin-bottom: 15px;
+}
+main#menu_contents #tarutaru ul li h5 span {
+  color: #ff850b;
+  margin-left: 10px;
+}
+main#menu_contents #tarutaru ul li p {
+  font-size: 14px;
+}
 
-/*メニュー*/
+.bg_good::after {
+  background: url(images/banner_good.jpg) no-repeat center;
+}
+
+.bg_access::after {
+  background: url(images/banner_access.jpg) no-repeat center;
+}
+
+.bg_feature::after {
+  background: url(images/banner_pick.jpg) no-repeat center;
+}
+
+.bg_partner::after {
+  background: url(images/banner_partner.jpg) no-repeat center;
+}
+
+.bg_menu::after {
+  background: url(images/banner_menu.jpg) no-repeat center;
+}
+
+.bg_contact::after {
+  background: url(images/banner_contact.jpg) no-repeat center;
+}
+
 /*ブログ*/
+#blog li {
+  margin-bottom: 60px;
+}
+#blog li a {
+  text-decoration: underline;
+}
+#blog li figure {
+  float: left;
+  width: 460px;
+}
+#blog li section {
+  position: relative;
+  float: right;
+  width: 450px;
+}
+#blog li section > span {
+  position: absolute;
+  left: -15px;
+  top: 22px;
+  z-index: 1;
+}
+#blog li section h3 {
+  padding: 10px 10px 10px 30px;
+  background: #e2f1e6;
+  margin-bottom: 30px;
+  color: #59b976;
+}
+#blog li section h3 span {
+  display: inline;
+  margin-left: 10px;
+  color: red;
+}
+
+/*single.php*/
+#post_sub .pager {
+  margin: 80px auto 120px auto;
+}
+#post_sub .pager a {
+  display: inline;
+  padding: 10px 15px;
+  border: 2px solid #59b976;
+  margin: 0 10px;
+  color: #59b976;
+}
+#post_sub .pager span {
+  background: #f9f9f9;
+  padding: 10px 15px;
+  color: #999;
+}
+
+.post_sub img {
+  display: inline;
+  width: auto;
+  height: auto;
+}
+
+.nav-below {
+  width: 200px;
+  margin: 70px auto 120px auto;
+}
+.nav-below a {
+  display: block;
+  text-align: center;
+  color: #fff;
+  background: #59b976;
+  padding: 15px 25px;
+}
+
 /*特集*/
+/*-----------------------
+masonry用css
+------------------------*/
+#masonry {
+  width: 990px;
+  margin: 0 auto 80px auto;
+}
+#masonry .grid {
+  width: 310px;
+  margin: 0 10px 20px 10px;
+  float: left;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+}
+#masonry .grid figure img {
+  margin-bottom: 10px;
+}
+#masonry .grid section {
+  padding: 5px 15px 25px 15px;
+}
+#masonry .grid section h3 {
+  color: #59b976;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #59b976;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+#masonry .grid section h3::before {
+  content: "-";
+  margin-right: 5px;
+}
+#masonry .grid section p {
+  color: #666;
+  font-size: 14px;
+}
+
+/*イベント*/
+#desutaru {
+  background: url(images/desutaru.jpg) no-repeat top center;
+  padding-top: 120px;
+  height: 570px;
+  margin-bottom: 60px;
+}
+#desutaru section {
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+#desutaru section h3 {
+  color: #f00;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 3.6px;
+  line-height: 45px;
+  text-shadow: 0px 1px 18.9px rgba(255, 255, 255, 0.83);
+}
+#desutaru section h4 {
+  color: #f00;
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 4.8px;
+  line-height: 45px;
+  margin-bottom: 30px;
+}
+#desutaru section p {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2.4px;
+  line-height: 33px;
+}
+
+.event_cal {
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  /*以下、カレンダーのカスタマイズ*/
+  /*以上、カレンダーのカスタマイズ*/
+}
+.event_cal > h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.event_cal .fc-day-header {
+  background: #59b976 !important;
+  color: #fff;
+}
+.event_cal .fc-left {
+  padding: 0 5px;
+  color: #ff850b;
+}
+.event_cal .fc-left h2::before {
+  content: "-";
+  margin-right: 5px;
+}
+.event_cal .fc-state-default {
+  background: #fff;
+  color: #ff850b;
+  font-weight: bold;
+}
+.event_cal .fc-ltr .fc-basic-view .fc-day-number {
+  padding: 5px !important;
+}
+
+/*イベントカレンダー詳細ページのカスタム*/
+.eventorganiser-event-meta {
+  margin-bottom: 40px;
+}
+.eventorganiser-event-meta > div {
+  width: 380px;
+  float: left;
+}
+.eventorganiser-event-meta > div h4 {
+  color: #ff850b;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.eventorganiser-event-meta > div ul {
+  margin: 0;
+}
+.eventorganiser-event-meta > div ul li {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #ccc;
+}
+.eventorganiser-event-meta > div ul li::before {
+  content: "・";
+}
+.eventorganiser-event-meta > div ul li strong {
+  margin-right: 5px;
+}
+.eventorganiser-event-meta > div ul li a {
+  display: inline;
+}
+.eventorganiser-event-meta .eo-event-venue-map {
+  float: right;
+  width: 480px;
+}
+
+#event_description {
+  padding: 30px;
+  background: #f9f9f9;
+  margin-bottom: 70px;
+}
+#event_description h6 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#event_content {
+  margin-bottom: 40px;
+}
+
+#event_btn {
+  width: 180px;
+  margin: 0 auto 80px auto;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+}
+#event_btn a {
+  display: block;
+  width: 180px;
+  padding: 15px 20px;
+  background: #59b976;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
 /*こだわり*/
+#good {
+  width: 100%;
+  overflow: hidden;
+}
+#good li {
+  width: 1280px;
+  margin: 0 auto;
+}
+#good li figure {
+  float: left;
+  width: 960px;
+  height: 650px;
+  margin-left: -320px;
+}
+#good li section {
+  float: right;
+  width: 640px;
+  padding: 60px 0 0 50px;
+}
+#good li section h3 {
+  color: #59b976;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 45px;
+  margin-bottom: 20px;
+}
+#good li section h3:before {
+  content: "-";
+  margin-right: 10px;
+}
+#good li:first-child section {
+  padding-top: 0;
+}
+#good li:nth-child(2) figure {
+  float: right;
+  margin-left: 0;
+  margin-right: -320px;
+  height: 550px;
+}
+#good li:nth-child(2) section {
+  padding: 60px 50px 0 0;
+  float: left;
+}
+#good li:nth-child(3) {
+  height: 500px;
+}
+
+/*誕生秘話*/
+#birth li {
+  margin-bottom: 80px;
+}
+#birth li figure {
+  width: 450px;
+  float: left;
+}
+#birth li section {
+  float: right;
+  width: 460px;
+}
+#birth li section h3 {
+  font-size: 30px;
+  color: #59b976;
+  margin-bottom: 30px;
+}
+#birth li:nth-child(even) figure {
+  float: right;
+}
+#birth li:nth-child(even) section {
+  float: left;
+}
+#birth li:nth-child(3) {
+  position: relative;
+  height: 730px;
+}
+#birth li:nth-child(3) figure:first-child {
+  margin-bottom: 30px;
+}
+#birth li:nth-child(3) figure:nth-child(2) {
+  position: absolute;
+  width: 450px;
+  left: 0;
+  top: 380px;
+}
+
 /*アクセス*/
+#access {
+  margin-bottom: 60px;
+}
+#access figure {
+  float: left;
+  width: 480px;
+}
+#access section {
+  float: right;
+  width: 430px;
+}
+#access section h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #666;
+}
+#access section h3::before {
+  content: "-";
+  margin-right: 5px;
+}
+#access section dl dt {
+  color: #59b976;
+}
+#access section dl dd {
+  margin-bottom: 16px;
+}
+
+#access + ul {
+  margin-bottom: 70px;
+}
+#access + ul li {
+  width: 600px;
+  float: left;
+}
+#access + ul li:last-child {
+  width: 300px;
+  float: right;
+}
+
+/*#top_mapはトップページ流用*/
 /*パートナー募集*/
+#partner_mv {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+#partner_mv img {
+  position: absolute;
+  width: 1920px;
+  height: 700px;
+  left: 50%;
+  margin-left: -960px;
+}
+
+#partner_mv + figcaption {
+  position: absolute;
+  top: 460px;
+  left: 40%;
+  text-align: center;
+  font-size: 55px;
+  color: #fff;
+}
+
+#partner_bg {
+  padding-top: 100px;
+  background: url(images/partner_bg01.png) no-repeat top center;
+  margin-bottom: 150px;
+}
+#partner_bg figure {
+  float: right;
+}
+
+.btn_contact {
+  margin: 0 auto;
+}
+.btn_contact a {
+  display: block;
+  width: 550px;
+  height: 100px;
+  background: #fa3638;
+  color: #fff;
+}
+.btn_contact a::before {
+  content: "&gt;&gt;";
+  margin-right: 5px;
+}
+
 /*お問い合わせ*/
+.contact_ttl {
+  height: 100px;
+  background: #e2f1e6;
+  margin-bottom: 40px;
+}
+.contact_ttl span {
+  display: block;
+  width: 960px;
+  margin: 0 auto;
+  line-height: 100px;
+  font-size: 30px;
+  color: #59b976;
+}
+
+#policy {
+  margin-bottom: 60px;
+}
+#policy p {
+  color: #888;
+  font-size: 14px;
+}
+
+#policy + h2 {
+  margin-bottom: 45px;
+}
+
+#contact_bg {
+  padding: 40px 30px;
+  background: #f9f9f9;
+  height: 590px;
+  margin-bottom: 100px;
+}
+#contact_bg p {
+  line-height: 30px;
+}
+#contact_bg p span {
+  color: #fa3638;
+}
+#contact_bg p .wpcf7-textarea {
+  width: 800px !important;
+  height: 190px !important;
+}
+#contact_bg .sub_btn input {
+  background: #fa3638;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  padding: 9px 30px;
+  font-family: "Noto Sans Japanese", 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif !important;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#contact_bg .sub_btn input:hover {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #fa3638;
+  color: #fa3638;
+}
+#contact_bg .sub_btn img {
+  width: 16px;
+}
+
 /*--------------------------------
     フッターエリア    
 ---------------------------------*/
 footer #btm_info {
   width: 960px;
   margin: 0 auto;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   font-size: 14px;
 }
 footer #btm_info figure {
@@ -621,11 +1332,11 @@ footer #sitemap {
   background: #EDF8F0;
   padding: 40px 0;
 }
-footer #sitemap > .cf {
+footer #sitemap > .cf, footer #sitemap > .eventorganiser-event-meta {
   width: 960px;
   margin: 0 auto;
 }
-footer #sitemap > .cf > li {
+footer #sitemap > .cf > li, footer #sitemap > .eventorganiser-event-meta > li {
   float: left;
   line-height: 2.5;
   width: 300px;
@@ -633,15 +1344,15 @@ footer #sitemap > .cf > li {
   margin-right: 30px;
   border-right: 1px dotted #C9EBD3;
 }
-footer #sitemap > .cf > li:last-child {
+footer #sitemap > .cf > li:last-child, footer #sitemap > .eventorganiser-event-meta > li:last-child {
   border-right: none;
   margin-right: 0;
 }
-footer #sitemap > .cf > li #branch > li {
+footer #sitemap > .cf > li #branch > li, footer #sitemap > .eventorganiser-event-meta > li #branch > li {
   float: left;
   width: 140px;
 }
-footer #sitemap > .cf > li #branch > li:last-child {
+footer #sitemap > .cf > li #branch > li:last-child, footer #sitemap > .eventorganiser-event-meta > li #branch > li:last-child {
   width: 150px;
 }
 footer #sitemap a {

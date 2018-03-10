@@ -1,58 +1,93 @@
-<!-- footer -->
-<div class="content-width relative">
-<figure id="pagetop" class="clearfix">
-    <a id="goto_top" href="#">
-        <img src="https://www.y-s-k.jp/we/wp-content/themes/y-s-k/images/pagetop.jpg" alt="pagetop">
-    </a>
-</figure>
-</div>
 <footer>
-    <div class="content-width">
-       <section class="sitemap">
-           <ul class="clearfix">
-               <li>【<a href="<?php echo home_url('/'); ?>">ホーム</a>】</li>
-               <li>
-                   <dl>
-                       <dt>【企業案内】</dt>
-                       <dd><a href="<?php echo home_url('/'); ?>company/information/">企業情報</a></dd>
-                       <dd><a href="<?php echo home_url('/'); ?>company/performance/">実績紹介</a></dd>
-                       <dd><a href="<?php echo home_url('/'); ?>company/base/">拠点紹介</a></dd>
-                       <dd><a href="<?php echo home_url('/'); ?>company/facility/">設備紹介</a></dd>
-                   </dl>
-               </li>
-               <li>
-                   <dl>
-                       <dt>【事業紹介】</dt>
-                       <dd><a href="<?php echo home_url('/'); ?>business/strong/">強み</a></dd>
-                       <dd><a href="<?php echo home_url('/'); ?>business/welding/">溶接</a></dd>
-                       <dd><a href="<?php echo home_url('/'); ?>business/piping/">配管工事</a></dd>
-                   </dl>
-               </li>
-               <li>
-                   <dl>
-                       <dt>【採用情報】</dt>
-                       <dd><a href="<?php echo home_url('/'); ?>employment/message/">メッセージ</a></dd>
-                       <dd><a href="<?php echo home_url('/'); ?>employment/recruit/">募集要項</a></dd>
-                   </dl>
-               </li>
-               <li>
-                   <dl>
-                       <dt>【最新情報】</dt>
-                       <dd><a href="<?php echo home_url('/'); ?>news/topics/">新着情報</a></dd>
-                   </dl>
-               </li>
-               <li>
-                   <dl>
-                       <dt>【お問い合わせ】</dt>
-                       <dd><a href="<?php echo home_url('/'); ?>contact/inquiry/">お問い合わせ</a></dd>
-                   </dl>
-               </li>
-           </ul>
-       </section>
+    <div id="btm_info" class="cf">
+        <figure>
+            <a href="<?php echo home_url('/'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.svg" alt="福岡 平尾山荘通りのチキン南蛮サンド店「ワタナベナンバン」" /></a>
+        </figure>
+        <ul>
+            <li>
+                <dl>
+                    <dt>住所</dt>
+                    <dd>〒810-0014<br>
+                        福岡市中央区平尾5-18-10</dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>営業時間</dt>
+                    <dd>11:00～20:00（L.O. 19:30）<br>
+                        ※売り切れ次第終了となります。</dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>定休日</dt>
+                    <dd>・毎週火曜日<br>
+                        ・第3月曜日</dd>
+                </dl>
+            </li>
+        </ul>
+    </div><!--#btm_info -->
+    <div id="sitemap">
+        <ul class="cf">
+            <li>
+                <ul id="branch" class="cf">
+                    <li>
+                        <ul>
+                            <li><a rel="">ホーム</a></li>
+                            <li><a rel="">メニュー</a></li>
+                            <li><a rel="">ブログ</a></li>
+                            <li><a rel="">特集</a></li>
+                            <li><a rel="">こだわり</a></li>
+                            <li><a rel="">誕生秘話</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><a rel="">アクセス</a></li>
+                            <li><a rel="">パートナー募集</a></li>
+                            <li><a rel="">お問い合わせ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li><a rel="">Facebook</a></li>
+                    <li><a rel="">Twitter</a></li>
+                    <li><a rel="">Instagram</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li><a rel="">食べログ</a></li>
+                    <li><a rel="">ぐるなび</a></li>
+                    <li><a rel="">Retty</a></li>
+                    <li><a rel="">エキテン</a></li>
+                    <li><a rel="">ホットペッパーグルメ</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div><!-- #sitemap -->
+    <div class="wow fadeIn"  data-wow-duration="2.5s" id="pagetop">
+        <a href="#"><img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/pagetop.png" alt="pagetop"></a>
     </div>
-    <p id="copyright" class="indent"><span>COPYRIGHT&copy;株式会社ワイエスケー ALL RIGHTS RESERVED.</span></p>
+    <div id="copyright">Copyright &copy; wanatabenanban All Rights Reserved.</div>
 </footer>
-<!-- footerここまで -->
+<script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/swiper_custom.js"></script>
+   <script>
+    $(function(){
+        // #で始まるリンクをクリックしたら実行されます
+        $('a[href^="#"]').click(function() {
+            // スクロールの速度
+            var speed = 1000; // ミリ秒で記述
+            var href= $(this).attr("href");
+            var target = $(href == "#" || href == "" ? 'html' : href);
+            var position = target.offset().top;
+            $('body,html').animate({scrollTop:position}, speed, 'swing');
+            return false;
+        });
+    });
+</script>
 <?php wp_footer(); ?>
 </body>
 

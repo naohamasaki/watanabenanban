@@ -1,12 +1,9 @@
 <?php get_template_part('header-page'); ?>
 <div id="content" class="clearfix"><!-- contentここから -->
-<div class="content-width">
-    <div id="the_topicpath">
-        <?php the_topicpath(); ?>
-    </div>
+<div class="column_width">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="post_sub content-width">
-        <h2 class="sigle_title"><span class="post-title"><?php the_title(); ?></span></h2>
+        <h2 id="page_title"><span><?php the_title(); ?></span></h2>
         <div class="post_content">
             <?php the_content(); ?>
         </div>
@@ -21,5 +18,4 @@
     </div><!-- post_subここまで -->
     </div><!-- content ここまで -->
 </div><!-- content-width -->
-<?php get_template_part('contents_bottom'); ?>
 <?php get_footer(); ?>

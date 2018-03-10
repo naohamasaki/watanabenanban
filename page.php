@@ -1,27 +1,20 @@
+<?php if(is_page( array( 'contact', 'partner' ) ) ): ?>
+<?php get_template_part('header-page02'); ?>
+<?php else: ?>
 <?php get_template_part('header-page'); ?>
-<div id="content_bg">
-    <div id="content">
-        <div class="content-width">
-            <ul id="two_columns" class="clearfix">
-                <li>
-                    <div id="the_topicpath">
-                        <?php the_topicpath(); ?>
-                    </div>
-                    <?php
-                        if (have_posts()) :
-                        while (have_posts()) :
-                        the_post();
-                        remove_filter('the_content', 'wpautop'); // 記事やページを作成時、自動的に <p> でくくられれないようにする
-                        the_content(); // cobtentをループで挟むと管理画面の内容が出てくる
-                        add_filter('the_content', 'wpautop'); // 特定の箇所のみPタグを無効化
-                        endwhile;
-                        endif;
-                    ?>
-                </li>
-                <li><?php get_sidebar(); ?></li>
-            </ul>
-        </div><!-- content-widthここまで -->
-        <?php get_template_part('contents_bottom'); ?>
-    </div>
-</div>
+<?php endif; ?>
+<?php
+        if (have_posts()) :
+        while (have_posts()) :
+        the_post();
+        remove_filter('the_content', 'wpautop'); // 記事やページを作成時、自動的に <p> でくくられれないようにする
+        the_content(); // cobtentをループで挟むと管理画面の内容が出てくる
+        add_filter('the_content', 'wpautop'); // 特定の箇所のみPタグを無効化
+        endwhile;
+        endif;
+    ?>
+<?php if(is_page( array( 'contact', 'partner' ) ) ): ?>
+<?php get_footer('page'); ?>
+<?php else: ?>
 <?php get_footer(); ?>
+<?php endif; ?>
