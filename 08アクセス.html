@@ -1,0 +1,88 @@
+<main>
+    <div class="column_width">
+        <h2 id="page_title"><span>アクセス・店舗概要</span></h2>
+        <div id="access" class="cf">
+            <figure>
+                <img class="thumbnail" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/img_0801.jpg" alt="福岡市平尾山荘通りのワタナベナンバン">
+            </figure>
+            <section>
+                <h3>店舗案内</h3>
+                <dl>
+                    <dt>【住所】</dt>
+                    <dd>福岡市中央区平尾5-18-10</dd>
+                    <dt>【TEL】</dt>
+                    <dd>092-524-6363</dd>
+                    <dt>【営業時間】</dt>
+                    <dd>11:00～20:00（ラストオーダー 19:30）
+                        <br>※売り切れ次第終了となります。
+                    </dd>
+                    <dt>【座席数】</dt>
+                    <dd>00席（カウンター：席、テーブル：0人×0席）</dd>
+                    <dt>【定休日】</dt>
+                    <dd>毎週火曜日、第3月曜日</dd>
+                    <dt>【アクセス】</dt>
+                    <dd>バス：</dd>
+                    <dd>車：</dd>
+                    <dt>【支払方法】</dt>
+                    <dd>現金のみ</dd>
+                </dl>
+            </section>
+        </div>
+        <ul class="cf">
+            <li>
+                <img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/img_0802.jpg" alt="ワタナベナンバンの外観">
+            </li>
+            <li>
+                <img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/img_0803.jpg" alt="ワタナベナンバンの店内">
+            </li>
+        </ul>
+    </div><!-- .column_width -->
+    <div id="top_map">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmHeeVX1nydLxKszRaOzDrCvgxj24t04E"></script>
+        <script type="text/javascript">
+            function googleMap() {
+                var latlng = new google.maps.LatLng(33.569717, 130.39761);/* 座標 */
+                var myOptions = {
+                    zoom: 16, /*拡大比率*/		
+                    center: latlng,
+                    mapTypeControlOptions: { mapTypeIds: ['style', google.maps.MapTypeId.ROADMAP] }
+                };
+                var map = new google.maps.Map(document.getElementById('map1'), myOptions);
+                /*アイコン設定*/
+                var icon = new google.maps.MarkerImage('//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/map_icon.png',/*画像url*/
+                                                       new google.maps.Size(30,30),/*アイコンサイズ*/
+                                                       new google.maps.Point(0,0)/*アイコン位置*/
+                                                      );
+                var markerOptions = {
+                    position: latlng,
+                    map: map,
+                    icon: icon,
+                    title: 'ワタナベナンバン',/*タイトル*/
+                    animation: google.maps.Animation.DROP/*アニメーション*/
+                };
+                var marker = new google.maps.Marker(markerOptions);
+                /*取得スタイルの貼り付け*/	
+                var styleOptions = [
+                    {
+                        "stylers": [
+                            {  saturation: -98 }
+                        ]
+                    }
+                ];
+                var styledMapOptions = { name: 'ワタナベナンバン' }/*地図右上のタイトル*/
+                var sampleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
+                map.mapTypes.set('style', sampleType);
+                map.setMapTypeId('style');
+            };
+            google.maps.event.addDomListener(window, 'load', function() {
+                googleMap();
+            });
+        </script>
+        <div id="map1" style="width:100%; height:350px; margin:0 auto 40px auto;"></div>
+
+
+    </div>
+</main>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/simpleParallax.min.js"></script>
+<script>$('.thumbnail').simpleParallax();</script>
