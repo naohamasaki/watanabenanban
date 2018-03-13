@@ -60,6 +60,33 @@ main#menu_contents {
     text-align: center;
 }
 
+//sass
+$base-Font: 16px;
+$green: #59b976;
+$orange: #ff850b;
+$red: #fa3638;
+$gray: #f9f9f9;
+$g_border: 1px solid #f1f1f1;
+$shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+//div{@include greenFont;}のようにして使用する
+//@mixinは@includeで呼び出す
+@mixin greenFont {
+    font-size: 16px;//下層ページコーディング時に変更する
+    color: $green;
+}
+@mixin column_width {
+    width: 960px;
+    margin: 0 auto;
+}
+@mixin semi_wide_width {
+    width: 1280px;
+    margin: 0 auto;
+}
+@mixin base_font {
+    font-size: 16px;
+    color: #444;
+}
+ 
 /*----------
 共通部分
 -----------*/
@@ -83,8 +110,8 @@ a {
     text-decoration: none;
     color: #333;
     &:link {
-        -webkit-transition: 0.26s;
-        transition: 0.26s;
+        -webkit-transition: 0.21s;
+        transition: 0.21s;
     }
     &:hover {
         opacity: .7;
@@ -94,11 +121,10 @@ a {
 .line_break {
     padding-top: 1.375em;
 }
-
 body {
     font-family: 'Noto Sans Japanese', 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     min-width: 960px;
-    line-height: 1.7em;
+    line-height: 1.6;
     letter-spacing: 0.095em;
     font-weight: 500;
     font-size: 16px;
@@ -160,8 +186,17 @@ header {
             }
         }
     }
+    #header_address {
+        float: right;
+        width: 265px;
+        span {
+            color: $red;
+        }
+    }
 }
-
+.page02 header {
+    background: url(images/header_tel.jpg) no-repeat 400px top;
+}
 /*-------------------------------
 ナビエリア
 -------------------------------*/
@@ -196,6 +231,10 @@ nav {
                     font-size: 10px;
                     margin-right: 5px;
                 }
+                &:hover {
+                    opacity: 1;
+                    color: $green;
+                    }
             }
             ul {
                 position: absolute;
@@ -474,9 +513,8 @@ main#top_contents_bg {
             left: 50%;
             width: 100px;
             margin-left: -54px;
-            top: 60px;
+            top: 24px;
             text-align: center;
-            padding-bottom: 5px;
             border-bottom: 2px solid #fff;
             margin-bottom: 40px;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
@@ -1236,53 +1274,323 @@ masonry用css
 
 /*#top_mapはトップページ流用*/
 /*パートナー募集*/
-
+#partner {
+    font-size: 22px;
+}//#partner
 #partner_mv {
-    position: relative;
-    width: 100%;
-    height: 700px;
-    overflow: hidden;
-    img {
-        position: absolute;
-        width: 1920px;
+        position: relative;
+        width: 100%;
         height: 700px;
-        left: 50%;
-        margin-left: -960px;
-    }
-    + figcaption {
-        position: absolute;
-        top: 460px;
-        left: 40%;
-        text-align: center;
-        font-size: 55px;
-        color: #fff;
-    }
-}
-
-#partner_bg {
-    padding-top: 100px;
-    background: url(images/partner_bg01.png) no-repeat top center;
+        overflow: hidden;
+        img {
+            position: absolute;
+            width: 1920px;
+            height: 700px;
+            left: 50%;
+            margin-left: -960px;
+        }
+        + figcaption {
+            position: absolute;
+            top: 460px;
+            left: 40%;
+            text-align: center;
+            font-size: 55px;
+            color: #fff;
+        }
+    }//#partner_mv
+    #partner_bg {
+        overflow: hidden;
+        width: 100%;
+        padding-top: 100px;
+        background: url(images/partner_bg01.png) no-repeat center top;
+        margin-bottom: 100px;
+        min-height: 870px;
+        .cf {
+            @include semi_wide_width;
+            figure {
+                float: right;
+                margin: 30px -200px 0 0;
+            }
+            section {
+                float: left;
+                width: 630px;
+                h3 {
+                    color: $green;
+                    font-size: 35px;
+                    margin-bottom: 40px;
+                }
+            }
+        }//.cf
+    }//#partner_bg
+    .btn_contact {
+        @include semi_wide_width;
+        margin: 60px auto 40px auto;
+        a {
+            display: block;
+            width: 540px;
+            font-weight: 400;
+            padding: 20px 30px;
+            background: $red;
+            font-size: 30px;
+            color: #fff;
+            &::before {
+                content: ">>";
+                font-size: 70%;
+                margin-right: 5px;
+            }
+        }
+    }//.btn_contact
+#about01,#history01 {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 100px;
+        h3 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 70px;
+            color: $red;
+            text-align: center;
+        }
+        > .cf {
+            @include semi_wide_width;
+            > figure {
+                width: 900px;
+                float: right;
+                margin: 0 -310px 100px 0;
+            }
+            figcaption {
+                color: $green;
+            }
+            section {
+                width: 600px;
+                float: left;
+                h4 {
+                    font-size: 35px;
+                    padding-left: 25px;
+                    border-left: 10px solid $orange;
+                    color: $orange;
+                    margin-bottom: 50px;
+                    height: 35px;
+                    line-height: 35px;
+                }
+            }//section
+        }//.cf
+        ul {
+            li {
+                float: left;
+                width: 400px;
+                margin-right: 40px;
+                &:nth-child(3) {
+                    margin-right: 0;
+                }
+                figure {
+                    width: 400px;
+                    margin-bottom: 10px;
+                }
+                figcaption {
+                    color: $orange;
+                }
+            }//li
+        }
+        span {
+            position: absolute;
+            top: 580px;
+            left: 0;
+            display: block;
+            width: 1920px;
+            background: #f9f9f9;
+            height: 500px;
+            z-index: -1;
+        }
+}//#about01,#history01
+#about02,#history02 {
     margin-bottom: 150px;
-    figure {
-        float: right;
-    }
-}
+    .cf {
+        @include semi_wide_width;
+        figure {
+            width: 900px;
+            float: left;
+            margin: 0 0 0 -310px;
+        }
+        section {
+            float: right;
+            width: 600px;
+            h4 {
+                font-size: 35px;
+                padding-left: 25px;
+                border-left: 10px solid $orange;
+                color: $orange;
+                margin-bottom: 50px;
+                height: 35px;
+                line-height: 35px;
+            }
+        }
 
-.btn_contact {
-    margin: 0 auto;
-    a {
-        display: block;
-        width: 550px;
-        height: 100px;
-        background: #fa3638;
-        color: #fff;
-        &::before {
-            content: "&gt;&gt;";
-            margin-right: 5px;
+    }
+}//#about02,#history02
+
+/*-----------------
+#history01,#history02は
+上記about01,about02のcssを流用
+-----------------*/
+#history01 {
+    div.cf {
+        > figure {
+            width: 580px;
+            margin-right: 0;
+        }
+        section h4 {
+            color: $green;
+            border-color: $green;
+        }
+    }//.cf
+    ul.cf li figure {
+            width: 400px;
+        }
+    ul.cf li figcaption {
+        color: $green;
+    }
+    span {
+        top: 650px;
+        height: 400px;
+    }
+}//#history01
+#history02 {
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    background: url(images/partner_bg01.png) no-repeat center bottom;
+    height: 930px;
+    padding-top: 100px;
+    .cf {
+        figure {
+            width: 580px;
+            margin-left: 0;
+        }
+        section h4 {
+            color: $green;
+            border-color: $green;
         }
     }
-}
-
+    span {
+        position: absolute;
+        height: 100px;
+        width: 1920px;
+        left: 0;
+        top: 0;
+        background: #f9f9f9;
+    }
+}//#history02
+#goal {
+    background: #d7f2df;
+    margin-top: -90px;
+    #goal_column {
+        width: 1400px;
+        padding: 120px 0;
+        margin: 0 auto;
+        background: rgba(255,255,255,0.95);
+        box-shadow: $shadow;
+        h3 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 70px;
+            color: $red;
+            text-align: center;
+        }
+        > div {
+            margin-bottom: 90px;
+            p {
+                text-align: center;
+            }
+        }
+        ul {
+            @include semi_wide_width;
+            li {
+                width: 400px;
+                float: left;
+                margin-right: 40px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                figure {
+                    width: 400px;
+                    margin-bottom: 10px;
+                }
+                figcaption {
+                    color: $green;
+                }
+            }
+        }
+    }
+}//#goal
+#possible {
+    margin-top: -20px;
+    padding-top: 100px;
+    background: #fff;
+    h3 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 70px;
+        color: $red;
+        text-align: center;
+    }
+    ul {
+        @include semi_wide_width;
+        li {
+            margin-bottom: 100px;
+            figure {
+                float: right;
+                width: 580px;
+            }
+            section {
+                width: 630px;
+                float: left;
+                h4 {
+                    font-size: 35px;
+                    color: $green;
+                    padding-bottom: 8px;
+                    border-bottom: 1px solid $green;
+                    margin-bottom: 40px;
+                }
+            }
+            &:nth-child(even) {
+                figure {
+                    float: left;
+                }
+                section {
+                    float: right;
+                }
+            }
+        }//li
+    }//ul
+}//#possible
+#consultation {
+    background: url(images/bg_0901.jpg) no-repeat top center;
+    padding-top: 90px;
+    .cf {
+        @include semi_wide_width;
+        margin-bottom: 70px;
+        figure {
+            float: right;
+        }
+        section {
+            width: 600px;
+            margin-top: 90px;
+            float: left;
+            h4 {
+                width: 550px;
+                margin-bottom: 60px;
+            }
+        }
+    }
+    .btn_contact {
+        margin: 0 auto;
+        a {
+            margin: 0 auto;
+        }
+    }
+}//#consultation
 /*お問い合わせ*/
 
 .contact_ttl {
@@ -1293,9 +1601,9 @@ masonry用css
         display: block;
         width: 960px;
         margin: 0 auto;
-        line-height: 100px;
         font-size: 30px;
         color: #59b976;
+        line-height: 100px;
     }
 }
 
@@ -1320,6 +1628,7 @@ masonry用css
         span {
             color: #fa3638;
         }
+        
         .wpcf7-textarea {
             width: 800px !important;
             height: 190px !important;
@@ -1439,5 +1748,21 @@ footer {
     }
 }
 
-/*パートナー募集*/
-/*お問い合わせ*/
+/*パートナー募集・お問い合わせ*/
+#footer-page {
+    #copyright ul {
+        @include column_width;
+        li {
+        margin: 0 10px;
+        color: #fff;
+        float: left;
+        &:last-child {
+            float: right;
+            }
+            a {
+                text-decoration: underline;
+                color: #fff;
+            }
+        }
+    } 
+}

@@ -38,12 +38,16 @@
         <!-- ヘッダーphpを表示するのに必要なタグ -->
     </head>
     <!-- body -->
-    <body>
+    <body class="page02">
         <!-- header -->
         <header class="clearfix">
             <h1 id="logo">
                 <a href="<?php echo home_url('/'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.svg" alt="福岡 平尾山荘通りのチキン南蛮サンド店「ワタナベナンバン」" /></a>
             </h1>
+            <ul id="header_address">
+                <li><span>営業時間：</span>11:00~20:00</li>
+                <li><span>定休日：</span>毎週火曜日、第3月曜日</li>
+            </ul>
         </header>
         <!-- headerここまで -->
         <?php $get_url = get_page_link() ; ?>

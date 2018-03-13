@@ -1,5 +1,12 @@
-<footer>
-    <div id="copyright">Copyright &copy; wanatabenanban All Rights Reserved.</div>
+<footer id="footer-page">
+    <div id="copyright">
+        <ul class="cf">
+            <li><a href="">ホーム</a></li>
+            <li><a href="">アクセス</a></li>
+            <li><a href="">ブログ</a></li>
+            <li>Copyright &copy; wanatabenanban All Rights Reserved.</li>
+        </ul>
+    </div>
 </footer>
 <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/swiper_custom.js"></script>
    <script>

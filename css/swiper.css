@@ -636,9 +636,9 @@ button.swiper-pagination-bullet {
     left: 50%;
     margin-left: -990px;
 }
+
 .swiper-slide img {
-    box-shadow: 0 0 10px rgba(0,0,0,0.21);
-}
-.swiper-slide-active {
-    margin: 0 30px;
+    height: auto;
+    padding: 0 15px;
+    margin-left: 15px;
 }
