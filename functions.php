@@ -11,9 +11,8 @@ if (!is_admin()) {
 	}
 	add_action('wp_print_scripts', 'add_script');
 }
-
-
-/* サイトナビゲーション用 */
+    // アイキャッチ画像を有効にする。
+    add_theme_support('post-thumbnails');/* サイトナビゲーション用 */
 register_nav_menus(array('navi' => 'ナビゲーション'));
 add_filter( 'the_title', 'img_nav_menu_title' );
 function img_nav_menu_title($title) {
@@ -69,7 +68,7 @@ function the_topicpath() {
 		// 月別アーカイブの場合場合メインページのリンクをパンくずに追加
 		$links  = $news;
 		// タイトル文字列は日本語表記とする
-		$title = single_month_title_jp();
+		//$title = single_month_title_jp();
 	} elseif(is_home()) {
 		// 投稿トップの場合メインページのリンクをパンくずに追加
 		$links = 'News';
@@ -211,6 +210,20 @@ function pagename_class($classes = '') {
     }
     return $classes;
 }
+/*--------------sidebar-------------------------*/
+//サイドバーのコンテンツを管理画面から操作するコード
+
+register_sidebar(
+    array(
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+
+    )
+);
+
+/*-------------------------------------------*/
 
 add_filter('body_class','pagename_class');
 ?>

@@ -379,7 +379,8 @@ main#top_contents_bg #topix_area {
         main#top_contents_bg #topix_area #top_news ul li time {
           margin-right: 20px; }
     main#top_contents_bg #topix_area #top_news a {
-      text-decoration: underline; }
+      text-decoration: underline;
+      display: inline; }
 main#top_contents_bg #top_menu {
   position: relative;
   overflow-x: hidden; }
@@ -744,7 +745,6 @@ main#menu_contents #tarutaru {
 masonry用css
 ------------------------*/
 #masonry {
-  width: 990px;
   margin: 0 auto 80px auto; }
   #masonry .grid {
     width: 310px;
@@ -765,9 +765,11 @@ masonry用css
         #masonry .grid section h3::before {
           content: "-";
           margin-right: 5px; }
-      #masonry .grid section p {
+      #masonry .grid section div {
         color: #666;
         font-size: 14px; }
+        #masonry .grid section div img {
+          display: none; }
 
 /*イベント*/
 #desutaru {
@@ -1109,6 +1111,62 @@ masonry用css
         margin-bottom: 50px;
         height: 35px;
         line-height: 35px; }
+
+/*新着情報一覧*/
+#newsAll {
+  width: 700px;
+  float: left;
+  margin-bottom: 30px; }
+  #newsAll li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #ccc; }
+    #newsAll li h3 {
+      margin-bottom: 10px;
+      font-weight: bold; }
+      #newsAll li h3 a {
+        display: inline;
+        text-decoration: underline;
+        color: #59b976; }
+      #newsAll li h3 time {
+        padding-right: 5px;
+        color: #59b976; }
+        #newsAll li h3 time::before {
+          content: "・";
+          padding-right: 5px; }
+
+.navigation {
+  width: 960px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  background: #f9f9f9;
+  margin-bottom: 40px; }
+  .navigation .prev {
+    float: left; }
+    .navigation .prev a {
+      text-decoration: underline; }
+  .navigation .next {
+    float: right; }
+    .navigation .next a {
+      text-decoration: underline; }
+
+#sidebar {
+  width: 220px;
+  float: right; }
+  #sidebar .widget_title {
+    color: #ff850b;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ff850b;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold; }
+  #sidebar ul li {
+    margin-bottom: 10px; }
+    #sidebar ul li a {
+      font-size: 14px;
+      text-decoration: underline; }
 
 /*-----------------
 #history01,#history02は

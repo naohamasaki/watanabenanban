@@ -499,6 +499,7 @@ main#top_contents_bg {
             }
             a {
                 text-decoration: underline;
+                display: inline;
             }
         }
     }
@@ -966,7 +967,6 @@ masonry用css
 ------------------------*/
 
 #masonry {
-    width: 990px;
     margin: 0 auto 80px auto;
     .grid {
         width: 310px;
@@ -990,9 +990,13 @@ masonry用css
                     margin-right: 5px;
                 }
             }
-            p {
+            
+            div {
                 color: #666;
                 font-size: 14px;
+                img {
+                    display: none;
+                }
             }
         }
     }
@@ -1430,6 +1434,75 @@ masonry用css
     }
 }//#about02,#history02
 
+/*新着情報一覧*/
+#newsAll {
+    width: 700px;
+    float: left;
+    margin-bottom: 30px;
+    li {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px dotted #ccc;
+        h3 {
+            margin-bottom: 10px;
+            font-weight: bold;
+            a {
+                display: inline;
+                text-decoration: underline;
+                color: $green;
+            }
+            time {
+                padding-right: 5px;
+                color: $green;
+                &::before {
+                    content: "・";
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}//#newsAll
+.navigation {
+    @include column_width;
+    padding: 30px 20px;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    background: #f9f9f9;
+    margin-bottom: 40px;
+    .prev {
+        float: left;
+        a {
+            text-decoration: underline;
+        }
+    }
+    .next {
+        float: right;
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+#sidebar {
+    width: 220px;
+    float: right;
+    .widget_title {
+        color: $orange;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $orange;
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    ul {
+        li {
+            margin-bottom: 10px;
+            a {
+                font-size: 14px;
+                text-decoration: underline;
+            }
+        }
+    }
+}
 /*-----------------
 #history01,#history02は
 上記about01,about02のcssを流用

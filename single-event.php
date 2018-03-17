@@ -40,7 +40,7 @@ get_header("page"); ?>
 
 				<!-- The content or the description of the event-->
                 <div id="event_description">
-                       <h6>- 備考 -</h6>
+                       <h6>- 詳細情報 -</h6>
                         <?php the_content(); ?>
                     </div>
                 </div><!-- .entry-content -->

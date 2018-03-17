@@ -1,9 +1,9 @@
 <footer id="footer-page">
     <div id="copyright">
         <ul class="cf">
-            <li><a href="">ホーム</a></li>
-            <li><a href="">アクセス</a></li>
-            <li><a href="">ブログ</a></li>
+            <li><a href="<?php echo home_url('/'); ?>">ホーム</a></li>
+            <li><a href="<?php echo home_url('/'); ?>access">アクセス</a></li>
+            <li><a href="<?php echo home_url('/'); ?>notice/diary/">ブログ</a></li>
             <li>Copyright &copy; wanatabenanban All Rights Reserved.</li>
         </ul>
     </div>

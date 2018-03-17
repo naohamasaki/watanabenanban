@@ -33,37 +33,38 @@
                 <ul id="branch" class="cf">
                     <li>
                         <ul>
-                            <li><a rel="">ホーム</a></li>
-                            <li><a rel="">メニュー</a></li>
-                            <li><a rel="">ブログ</a></li>
-                            <li><a rel="">特集</a></li>
-                            <li><a rel="">こだわり</a></li>
-                            <li><a rel="">誕生秘話</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>">ホーム</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>menu">メニュー</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>notice/diary">ブログ</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>notice/event">イベント</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>notice/feature">特集</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>good/original">こだわり</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>good/birth">誕生秘話</a></li>
                         </ul>
                     </li>
                     <li>
                         <ul>
-                            <li><a rel="">アクセス</a></li>
-                            <li><a rel="">パートナー募集</a></li>
-                            <li><a rel="">お問い合わせ</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>access">アクセス</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>partner">パートナー募集</a></li>
+                            <li><a href="<?php echo home_url('/'); ?>contact">お問い合わせ</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             <li>
                 <ul>
-                    <li><a rel="">Facebook</a></li>
-                    <li><a rel="">Twitter</a></li>
-                    <li><a rel="">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/watanabe.nanban/" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/watanabeNanban" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/watanabe_nanban/" target="_blank">Instagram</a></li>
                 </ul>
             </li>
             <li>
                 <ul>
-                    <li><a rel="">食べログ</a></li>
-                    <li><a rel="">ぐるなび</a></li>
-                    <li><a rel="">Retty</a></li>
-                    <li><a rel="">エキテン</a></li>
-                    <li><a rel="">ホットペッパーグルメ</a></li>
+                    <li><a href="https://tabelog.com/fukuoka/A4001/A400104/40045772/" target="_blank">食べログ</a></li>
+                    <li><a href="https://r.gnavi.co.jp/6fj3tucw0000/" target="_blank">ぐるなび</a></li>
+                    <li><a href="https://retty.me/area/PRE40/ARE124/SUB12404/100001339383/" target="_blank">Retty</a></li>
+                    <li><a href="https://www.ekiten.jp/shop_66568916/" target="_blank">エキテン</a></li>
+                    <li><a href="https://www.hotpepper.jp/strJ001093715/" target="_blank">ホットペッパーグルメ</a></li>
                 </ul>
             </li>
         </ul>

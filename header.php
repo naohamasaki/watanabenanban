@@ -49,13 +49,13 @@
                     <img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/slider_01.jpg" alt="福岡のチキン南蛮専門店">
                 </div>
                 <div class="swiper-slide">
-                    <a href=""><img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/slider_02.jpg" alt="各種メディアにも特集されました。"></a>
+                    <a href="<?php echo home_url('/'); ?>notice/feature/"><img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/slider_02.jpg" alt="各種メディアにも特集されました。"></a>
                 </div>
                 <div class="swiper-slide">
                     <img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/slider_04.jpg" alt="南蛮サンドに最高にあうピタパン">
                 </div>
                 <div class="swiper-slide">
-                    <a href=""><img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/slider_03.jpg" alt="ワタナベナンバンのパートナー募集"></a>
+                    <a href="<?php echo home_url('/'); ?>partner"><img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/slider_03.jpg" alt="ワタナベナンバンのパートナー募集"></a>
                 </div>
                 <div class="swiper-slide">
                     <img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/slider_05.jpg" alt="水を一滴も使わない特製の南蛮酢">
