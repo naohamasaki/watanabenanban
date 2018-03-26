@@ -7,9 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.png">
         <link rel="stylesheet" href="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/css/reset.css">
-        <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen, print" />
         <link rel="stylesheet" href="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/css/swiper.css">
         <link rel="stylesheet" href="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/css/animate.css">
+        <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen, print" />
         <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/marsonry.js"></script>
         <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/imagesloaded.min.js"></script>
@@ -30,7 +30,9 @@
         </script>
         <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/wow.js"></script>
         <script>
-            new WOW().init();
+            new WOW({
+                mobile: false
+            }).init();
         </script>
         <title>福岡 チキン南蛮 | 【ワタナベナンバン】福岡市平尾山荘通のチキン南蛮専門店</title>
         <!--[if lt IE 8] -->
@@ -51,6 +53,11 @@
                     </div>
                 </div>
             </a>
+            <p class="sp-tel">
+                <a href="tel:0925246363">
+                    <img src="http://test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/tel.png" alt="092-524-6363">
+                </a>
+            </p>
         </header>
         <!-- headerここまで -->
         <!-- navi -->

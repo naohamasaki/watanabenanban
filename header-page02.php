@@ -30,7 +30,9 @@
         </script>
         <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/wow.js"></script>
         <script>
-            new WOW().init();
+            new WOW({
+                mobile: false
+            }).init();
         </script>
         <title>福岡 チキン南蛮 | 【ワタナベナンバン】福岡市平尾山荘通のチキン南蛮専門店</title>
         <!--[if lt IE 8] -->
@@ -48,6 +50,11 @@
                 <li><span>営業時間：</span>11:00~20:00</li>
                 <li><span>定休日：</span>毎週火曜日、第3月曜日</li>
             </ul>
+            <p class="sp-tel">
+                <a href="tel:0925246363">
+                    <img src="http://test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/tel.png" alt="092-524-6363">
+                </a>
+            </p>
         </header>
         <!-- headerここまで -->
         <?php $get_url = get_page_link() ; ?>
@@ -55,7 +62,7 @@
         <figure id="partner_mv">
             <img src="<?php bloginfo('template_url'); ?>/images/teaser_05.jpg" alt="パートナー募集">
         </figure>
-        <figcaption><span>パートナー募集</span></figcaption>
+        <figcaption class="wow fadeInUp"><span>パートナー募集</span></figcaption>
         <?php elseif ( strstr($get_url,'contact')) : ?>
         <h2 class="contact_ttl"><span>お問い合わせ</span></h2>
         <?php else: ?>
