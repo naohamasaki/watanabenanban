@@ -1076,6 +1076,9 @@ masonry用css
                     color: $green;
                     font-size: 150%;
                     margin-bottom: 10px;
+                    br {
+                        display: none;
+                    }
                 }
                 p {
                     font-size: 90%;
@@ -1448,6 +1451,8 @@ masonry用css
     }
     .sub_btn {
         input {
+            -webkit-appearance: none;
+            border-radius: 0;
             width: 100%;
             background: #fa3638;
             color: #fff;
@@ -1459,13 +1464,6 @@ masonry用css
             transition: .3s;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            &:hover {
-                -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-                background: #fff;
-                border: 1px solid #fa3638;
-                color: #fa3638;
-            }
         }
         img {
             width: 16px;
