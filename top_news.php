@@ -9,16 +9,20 @@ function catch_that_image() {
     $output = preg_match_all("/<img[^>]+src=[\"'](s?https?:\/\/[\-_\.!~\*'()a-z0-9;\/\?:@&=\+\$,%#]+\.(jpg|jpeg|png|gif))[\"'][^>]+>/i", $post->post_content, $matches);
     $first_img = $matches [1] [0];
     if(empty($first_img)){ //Defines a default image
-        $first_img = "http://test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/watanabenanban_blog.jpg";
+        $first_img = "http://watanabenanban.com/wp-content/themes/watanabenanban/images/watanabenanban_blog.jpg";
     }
     return $first_img;
 }
 ?>
 <div id="post_sub">
     <ul>
-        <?php query_posts('posts_per_page=10&paged='.$paged); ?>
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <li>
+        <?php
+        query_posts("cat=5&posts_per_page=10&paged=$paged");
+        if (have_posts()) :
+        while ( have_posts() ) :
+        the_post();
+        ?>
+        <li>
                 <time><?php the_time('Y-m-d'); ?></time><a href="<?php the_permalink();?>"><?php the_title(); ?></a>
             </li>
             <?php endwhile; ?>

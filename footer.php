@@ -70,11 +70,11 @@
         </ul>
     </div><!-- #sitemap -->
     <div class="wow fadeIn"  data-wow-duration="2.5s" id="pagetop">
-        <a href="#"><img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/pagetop.png" alt="pagetop"></a>
+        <a href="#"><img src="//watanabenanban.com/wp-content/themes/watanabenanban/images/pagetop.png" alt="pagetop"></a>
     </div>
     <div id="copyright">Copyright &copy; wanatabenanban All Rights Reserved.</div>
 </footer>
-<script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/swiper_custom.js"></script>
+<script type="text/javascript" src="//watanabenanban.com/wp-content/themes/watanabenanban/js/swiper_custom.js"></script>
    <script>
     $(function(){
         // #で始まるリンクをクリックしたら実行されます

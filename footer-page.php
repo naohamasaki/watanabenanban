@@ -8,7 +8,7 @@
         </ul>
     </div>
 </footer>
-<script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/swiper_custom.js"></script>
+<script type="text/javascript" src="//watanabenanban.com/wp-content/themes/watanabenanban/js/swiper_custom.js"></script>
    <script>
     $(function(){
         // #で始まるリンクをクリックしたら実行されます

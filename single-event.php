@@ -52,7 +52,7 @@ get_header("page"); ?>
 		<?php endwhile; // end of the loop. ?>
 
 	</div><!-- #content -->
-    <div id="event_btn"><a href="http://test20150101.wp.xdomain.jp/notice/event/#eo_fullcalendar_1_loading">一覧へ戻る</a></div>
+    <div id="event_btn"><a href="http://watanabenanban.com/notice/event/#eo_fullcalendar_1_loading">一覧へ戻る</a></div>
 </div><!-- #primary -->
 
 <!-- Call template footer -->

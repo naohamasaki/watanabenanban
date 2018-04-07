@@ -6,13 +6,13 @@
         <!-- PC用 -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.png">
-        <link rel="stylesheet" href="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/css/reset.css">
-        <link rel="stylesheet" href="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/css/swiper.css">
-        <link rel="stylesheet" href="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/css/animate.css">
+        <link rel="stylesheet" href="//watanabenanban.com/wp-content/themes/watanabenanban/css/reset.css">
+        <link rel="stylesheet" href="//watanabenanban.com/wp-content/themes/watanabenanban/css/swiper.css">
+        <link rel="stylesheet" href="//watanabenanban.com/wp-content/themes/watanabenanban/css/animate.css">
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen, print" />
-        <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/jquery-1.8.3.min.js"></script>
-        <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/marsonry.js"></script>
-        <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/imagesloaded.min.js"></script>
+        <script type="text/javascript" src="//watanabenanban.com/wp-content/themes/watanabenanban/js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="//watanabenanban.com/wp-content/themes/watanabenanban/js/marsonry.js"></script>
+        <script type="text/javascript" src="//watanabenanban.com/wp-content/themes/watanabenanban/js/imagesloaded.min.js"></script>
         <script>
             //グリッド用スクリプト（masonry）
             //設置場所はヘッダーのプラグインリンクの直下
@@ -28,7 +28,7 @@
                 });
             });
         </script>
-        <script type="text/javascript" src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/js/wow.js"></script>
+        <script type="text/javascript" src="//watanabenanban.com/wp-content/themes/watanabenanban/js/wow.js"></script>
         <script>
             new WOW({
                 mobile: false
@@ -38,6 +38,11 @@
         <!--[if lt IE 8] -->
         <?php wp_head(); ?>
         <!-- ヘッダーphpを表示するのに必要なタグ -->
+        <!-- User Heat Tag -->
+        <script type="text/javascript">
+            (function(add, cla){window['UserHeatTag']=cla;window[cla]=window[cla]||function(){(window[cla].q=window[cla].q||[]).push(arguments)},window[cla].l=1*new Date();var ul=document.createElement('script');var tag = document.getElementsByTagName('script')[0];ul.async=1;ul.src=add;tag.parentNode.insertBefore(ul,tag);})('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');_uhtracker({id:'uhHg9URfVW'});
+        </script>
+        <!-- End User Heat Tag -->
     </head>
     <!-- body -->
     <body>
@@ -55,7 +60,7 @@
             </a>
             <p class="sp-tel">
                 <a href="tel:0925246363">
-                    <img src="http://test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/tel.png" alt="092-524-6363">
+                    <img src="http://watanabenanban.com/wp-content/themes/watanabenanban/images/tel.png" alt="092-524-6363">
                 </a>
             </p>
         </header>

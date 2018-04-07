@@ -11,7 +11,7 @@ Template Name: 新着情報一覧テンプレート
   <div class="newsAll">
    <ul id="newsAll">
     <?php
-       query_posts("cat=8&posts_per_page=10&paged=$paged");
+       query_posts("cat=5&posts_per_page=10&paged=$paged");
         if (have_posts()) :
         while ( have_posts() ) :
         the_post();

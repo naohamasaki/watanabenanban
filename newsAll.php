@@ -9,7 +9,7 @@ function catch_that_image() {
 	$output = preg_match_all("/<img[^>]+src=[\"'](s?https?:\/\/[\-_\.!~\*'()a-z0-9;\/\?:@&=\+\$,%#]+\.(jpg|jpeg|png|gif))[\"'][^>]+>/i", $post->post_content, $matches);
 	$first_img = $matches [1] [0];
 	if(empty($first_img)){ //Defines a default image
-        $first_img = "http://test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/watanabenanban_blog.jpg";
+        $first_img = "http://watanabenanban.com/wp-content/themes/watanabenanban/images/watanabenanban_blog.jpg";
 	}
 return $first_img;
 }
@@ -24,7 +24,7 @@ return $first_img;
             </figure>
             <section>
                 <span>
-                    <img src="//test20150101.wp.xdomain.jp/wp-content/themes/watanabenanban/images/title_line.jpg">
+                    <img src="//watanabenanban.com/wp-content/themes/watanabenanban/images/title_line.jpg">
                 </span>
                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                 <p><?php echo mb_substr(get_the_excerpt(), 0, 200); ?>...<a href="<?php the_permalink();?>">詳しく見る</a></p>
