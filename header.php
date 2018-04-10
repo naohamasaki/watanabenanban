@@ -1,97 +1,108 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.6,user-scalable=yes,">-->
-    <!-- PC用 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.png">
-    <link rel="stylesheet" href="//watanabenanban.com/wp-content/themes/watanabenanban/css/reset.css">
-    <link rel="stylesheet" href="//watanabenanban.com/wp-content/themes/watanabenanban/css/swiper.css">
-    <link rel="stylesheet" href="//watanabenanban.com/wp-content/themes/watanabenanban/css/animate.css">
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen, print" />
-    <script type="text/javascript" src="//watanabenanban.com/wp-content/themes/watanabenanban/js/swiper.min.js"></script>
-        <script type="text/javascript" src="//watanabenanban.com/wp-content/themes/watanabenanban/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="//watanabenanban.com/wp-content/themes/watanabenanban/js/wow.js"></script>
-        <script>
-            new WOW({
-                mobile: false
-            }).init();
-        </script>
-    <title>福岡 チキン南蛮 | 【ワタナベナンバン】福岡市平尾山荘通のチキン南蛮専門店</title>
-    <!--[if lt IE 8] -->
-    <?php wp_head(); ?>
-    <!-- ヘッダーphpを表示するのに必要なタグ -->
-        <!-- User Heat Tag -->
-        <script type="text/javascript">
-            (function(add, cla){window['UserHeatTag']=cla;window[cla]=window[cla]||function(){(window[cla].q=window[cla].q||[]).push(arguments)},window[cla].l=1*new Date();var ul=document.createElement('script');var tag = document.getElementsByTagName('script')[0];ul.async=1;ul.src=add;tag.parentNode.insertBefore(ul,tag);})('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');_uhtracker({id:'uhHg9URfVW'});
-        </script>
-        <!-- End User Heat Tag -->
+<!doctype html>
+<html lang="ja" dir="ltr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="チキン南蛮サンド専門店として2006年宮崎青空市場にオープン。 2013年より福岡市早良区西新商店街へ移転。17年より中央区平尾山荘通りへ。宮崎発祥のチキン南蛮を毎朝焼き上げるオリジナルのピタパンに挟んだ南国宮崎のファストフード。9種類のタルタルソースからお好みをチョイス！">
+<meta name="keywords" content="福岡,平尾,ランチ,チキン南蛮,タルタル,サンド,ピタパン,デスタル,">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="google-site-verification" content="4mSgUcFzB4fb4X8gWqHRT0xFug7-hw27lIfi0IomQa8">
+<meta name="google-site-verification" content="4mSgUcFzB4fb4X8gWqHRT0xFug7-hw27lIfi0IomQa8" />
+<title>福岡市中央区平尾のチキン南蛮 | ワタナベナンバン 福岡市平尾のチキン南蛮サンド専門店</title>
+<link href="http://watanabenanban.com/wp-content/themes/watanabenanban/css/reset.css" rel="stylesheet" type="text/css">
+<link href="http://watanabenanban.com/wp-content/themes/watanabenanban/style.css" rel="stylesheet" type="text/css">
+<link href="http://watanabenanban.com/wp-content/themes/watanabenanban/jQuery/jquery-simplyscroll-2.0.5/jquery.simplyscroll.css" type="text/css" rel="stylesheet">
+<link href="http://watanabenanban.com/wp-content/themes/watanabenanban/jQuery/jquery.bxslider/jquery.bxslider.css" type="text/css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Josefin+Slab:700italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://watanabenanban.com/wp-content/themes/watanabenanban/jQuery/jQuery1.11.3.js"></script>
+<script type="text/javascript" src="http://watanabenanban.com/wp-content/themes/watanabenanban/jQuery/jquery.bxslider/jquery.bxslider.js"></script>
+<script type="text/javascript" src="http://watanabenanban.com/wp-content/themes/watanabenanban/jQuery/jQuery1.11.3.js"></script>
+<script type="text/javascript" src="http://watanabenanban.com/wp-content/themes/watanabenanban/jQuery/jquery.bxslider/jquery.bxslider.js"></script>
+<!--[if lt IE 9]>
+<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<script type="text/javascript">
+  $(function () {
+		$('a[href^="#"]').click(function () {
+			 $('html:not(:animated), body:not(:animated)').animate({
+				  scrollTop: $($(this).attr('href')).offset().top
+			 }, 1500);
+			 return false;
+		});
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function () {
+		var foo =
+			 $('.bxslider').bxSlider({
+				  auto: true,
+				  mode: 'fade',
+				  pause: 6000,
+				  speed: 3500,
+				  onSlideAfter: function () {
+						foo.startAuto();
+				  }
+			 });
+  });
+</script>
+<script type="text/javascript">
+  $(function () {
+		var ua = navigator.userAgent;
+		if (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0) {
+			 $('.tel-link').each(function () {
+				  var str = $(this).text();
+				  $(this).html($('<a>').attr('href', 'tel:' + str.replace(/-/g, '')).append(str + '</a>'));
+			 });
+		}
+  });
+</script>
+<!-- User Heat Tag -->
+<script type="text/javascript">
+(function(add, cla){window['UserHeatTag']=cla;window[cla]=window[cla]||function(){(window[cla].q=window[cla].q||[]).push(arguments)},window[cla].l=1*new Date();var ul=document.createElement('script');var tag = document.getElementsByTagName('script')[0];ul.async=1;ul.src=add;tag.parentNode.insertBefore(ul,tag);})('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');_uhtracker({id:'uhegxvMzPM'});
+</script>
+<!-- End User Heat Tag -->
 </head>
-<!-- body -->
+
 <body>
-<!-- header -->
-<header class="clearfix">
-    <h1 id="logo">
-        <a href="<?php echo home_url('/'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.svg" alt="福岡 平尾山荘通りのチキン南蛮サンド店「ワタナベナンバン」" /></a>
-    </h1>
-    <a href="<?php echo home_url('/'); ?>contact">
-        <div class="header_banner_bg">
-            <div class="header_bth_border">
-                <p class="contact">お問い合わせ</p>
-            </div>
+
+    <!-- facebook埋め込み -->
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.4";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- facebook埋め込み -->
+
+    <header>
+        <div class="cf">
+            <figure id="topImg">
+					<a href="<?php echo home_url('/'); ?>">
+						<img id="logo" src="http://watanabenanban.com/wp-content/themes/watanabenanban/img/logo.gif" alt="福岡市平尾のチキン南蛮店のワタナベナンバン"></a>
+            </figure>
+            <address class="cf">
+					<p><i class="fa fa-phone"></i><span class="tel-link tel">092-524-6363</span></p>
+				</address>
+            <nav id="global-navi">
+                <label for="nav-switcher" id="controller"><img src="http://watanabenanban.com/wp-content/themes/watanabenanban/img/menu.gif" alt="メニューボタン"></label>
+                <input type="checkbox" id="nav-switcher" value="">
+                <ul id="navi" class="cf">
+                    <li class="now"><a href="<?php echo home_url('/'); ?>">トップ</a></li>
+                    <li><a href="<?php echo esc_url(get_permalink( get_page_by_path('menu')->ID )) ?>">メニュー</a></li>
+                    <li><a href="<?php echo esc_url(get_permalink( get_page_by_path('goodfor')->ID )) ?>">こだわり</a></li>
+                    <li><a href="<?php echo esc_url(get_permalink( get_page_by_path('pick')->ID )) ?>">特　集</a></li>
+                    <li><a href="<?php echo esc_url(get_permalink( get_page_by_path('map')->ID )) ?>">アクセス</a></li>
+                </ul>
+            </nav>
         </div>
-    </a>
-    <p class="sp-tel">
-        <a href="tel:0925246363">
-            <img src="//watanabenanban.com/wp-content/themes/watanabenanban/images/tel.png" alt="092-524-6363">
-        </a>
-    </p>
     </header>
-<!-- headerここまで -->
-<!-- navi -->
-<nav>
-    <?php wp_nav_menu(array('theme_location' => 'navi')); ?>
-</nav> 
-<div id="slider">
-    <div class="container">
-        <div class="swiper-container mb60">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="//watanabenanban.com/wp-content/themes/watanabenanban/images/slider_01.jpg" alt="福岡のチキン南蛮専門店">
-                </div>
-                <div class="swiper-slide">
-                    <a href="<?php echo home_url('/'); ?>notice/feature/"><img src="//watanabenanban.com/wp-content/themes/watanabenanban/images/slider_02.jpg" alt="各種メディアにも特集されました。"></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="//watanabenanban.com/wp-content/themes/watanabenanban/images/slider_04.jpg" alt="南蛮サンドに最高にあうピタパン">
-                </div>
-                <div class="swiper-slide">
-                    <a href="<?php echo home_url('/'); ?>partner"><img src="//watanabenanban.com/wp-content/themes/watanabenanban/images/slider_03.jpg" alt="ワタナベナンバンのパートナー募集"></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="//watanabenanban.com/wp-content/themes/watanabenanban/images/slider_05.jpg" alt="水を一滴も使わない特製の南蛮酢">
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-</div>
-<!-- 背景 --> 
-<div id="trf">
-    <div id="a">
-        <div id="b">
-            <div id="c"></div>
-        </div>
-    </div>
-</div>
-<!-- #slider -->
-
-
-
-
-
-
-
-
-
+    <?php wp_head(); ?>
